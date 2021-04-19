@@ -243,7 +243,7 @@ def explain_global(df , model, target_col_name, training=True, test_size = 0.33)
 
       print('\n\n Most important words in columns \n\n')
       pd.Series(abs(np.sum(model.coef_, axis=0)/model.coef_.shape[0]), index=feat_names).nlargest(20).plot(kind='barh')
-
+      plt.show()
       word_freq = dict(zip(feat_names, abs(np.sum(model.coef_, axis=0)/model.coef_.shape[0])))
 
       print('\n\n WordCloud of most important words in columns \n\n')
