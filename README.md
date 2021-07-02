@@ -98,8 +98,7 @@ Function to evaluate global results
 
 * Pass the dataframe,  model, name of target columns, and specify num_cols, embedings.
 
-* Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like 
-**{'feature_names' : feat_names, 'embeddings_values' : values}**
+* Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like **{'feature_names' : feat_names, 'embeddings_values' : values}**
 
 * Where feat_names are feature_names from Countvectorizer and values are the embedded values
 
