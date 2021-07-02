@@ -37,7 +37,9 @@ check(df , model, target_col_name, num_cols=None,embedings=None) <br>
 dataframe for which you want explanations, model, name of the target column (right now now it supports only numerical target column, if they are categorical , encode them),  <br>
 
 **Optional arguments**: cat_cols, num_cols, embedings   <br>
+
 Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like **{'feature_names' : feat_names, 'embeddings_values' : values}**  <br>
+
 Where feat_names are feature_names from Countvectorizer and values are the embedded values
 
 
