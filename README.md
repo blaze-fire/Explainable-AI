@@ -15,6 +15,9 @@ So  we provide functions(**explain_local**, **explain_global**) to explain the p
 
 
 ## Different Components
+
+## Explain Local
+
 Function to evaluate global results
 * First we plot heatmap of missing values in dataframe using seaborn.
 * Then missing predictions is a helper function which checks whether the model is unable to predict a particular class  and returns a boolean value whether its   missing predictions and the list of predictions its missing.
@@ -24,12 +27,12 @@ Function to evaluate global results
   * Ordinal Encoding can be applied on remaining categorical columns (i.e Categorical_columns - embed_columns) 
   * Now we split the dataset (train-test split)
   * Then we have three functions only_cat, only_numerical, combined
+  * Then we train the combine dataset and evaluate result
+
+**Note:** If model is trained then we simply do train-test split and calculate predictions and evaluate results like we did before.
 
 
-
-## Explain Local
-
-check(df , model, target_col_name, num_cols=None,embedings=None) <br>
+**check(df , model, target_col_name, num_cols=None,embedings=None)** <br>
 
 **Necessary parameters:** df, model, target_col_name   <br>
 
@@ -100,4 +103,11 @@ Function to evaluate global results
 * Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like **{'feature_names' : feat_names, 'embeddings_values' : values}**
 
 * Where feat_names are feature_names from Countvectorizer and values are the embedded values
+
+
+<br>
+* First we check the value counts of target variable then we check whether embedings were passed and evaluate results.
+* Then we check the type of model passed and verify that they are only linear models (as it supports linear models for now).
+* Then we get predictions, accuracy and classification_report.
+* Evaluate_result function evaluates the result of classification_report, then we plot the feature importances and look for reasons of columns with low feature importances.
 
