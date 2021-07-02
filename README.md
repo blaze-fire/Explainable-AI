@@ -45,7 +45,27 @@ Specify names of numerical columns in the form of lists, also specify the embedd
 Where feat_names are feature_names from Countvectorizer and values are the embedded values
 
 
-## Explain Global 
+## Explain Local
+
+`def explain_local(df , model, target_col_name, num_cols=None, embedings=None)`
+
+* Function to evaluate local results
+
+* Pass the dataframe,  model, name of target columns, and specify num_cols, embedings.
+
+* Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like **{'feature_names' : feat_names, 'embeddings_values' : values}**
+
+* Where feat_names are feature_names from Countvectorizer and values are the embedded values
+
+
+<br>
+* First we check the value counts of target variable then we check whether embedings were passed and evaluate results.
+* Then we check the type of model passed and verify that they are only linear models (as it supports linear models for now).
+* Then we get predictions, accuracy and classification_report.
+* Evaluate_result function evaluates the result of classification_report, then we plot the feature importances and look for reasons of columns with low feature importances.
+
+
+### Explain Global 
 
 **explain_global(df , model, target_col_name, training=True, test_size = 0.33)**
 
@@ -58,12 +78,8 @@ dataframe for which you want explanations, model, name of the target column (rig
 specify only when model is not trained(by default its True). 
 
 test_size as we will perform train_test split to evaluate  models performance (by default it’s value is 0.33)
-
-
-## Different Components
-
-### Explain Global
-
+l
+<br>
 Function to evaluate global results
 
 * First we plot heatmap of missing values in dataframe using seaborn.
@@ -92,22 +108,4 @@ Function to evaluate global results
 * Evaluate_result function evaluates the result of classification_report, then we plot the feature importances and look for reasons of columns with low feature importances.
 
 
-## Explain Local
-
-`def explain_local(df , model, target_col_name, num_cols=None, embedings=None)`
-
-* Function to evaluate local results
-
-* Pass the dataframe,  model, name of target columns, and specify num_cols, embedings.
-
-* Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like **{'feature_names' : feat_names, 'embeddings_values' : values}**
-
-* Where feat_names are feature_names from Countvectorizer and values are the embedded values
-
-
-<br>
-* First we check the value counts of target variable then we check whether embedings were passed and evaluate results.
-* Then we check the type of model passed and verify that they are only linear models (as it supports linear models for now).
-* Then we get predictions, accuracy and classification_report.
-* Evaluate_result function evaluates the result of classification_report, then we plot the feature importances and look for reasons of columns with low feature importances.
 
