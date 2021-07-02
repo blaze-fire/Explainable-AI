@@ -16,7 +16,7 @@ So  we provide functions(**explain_local**, **explain_global**) to explain the p
 
 ## Different Components
 
-## Explain Local
+### Explain Local
 
 Function to evaluate global results
 * First we plot heatmap of missing values in dataframe using seaborn.
@@ -44,9 +44,6 @@ Specify names of numerical columns in the form of lists, also specify the embedd
 
 Where feat_names are feature_names from Countvectorizer and values are the embedded values
 
-
-## Explain Local
-
 `def explain_local(df , model, target_col_name, num_cols=None, embedings=None)`
 
 * Function to evaluate local results
@@ -64,8 +61,11 @@ Where feat_names are feature_names from Countvectorizer and values are the embed
 * Then we get predictions, accuracy and classification_report.
 * Evaluate_result function evaluates the result of classification_report, then we plot the feature importances and look for reasons of columns with low feature importances.
 
+<br>
+<br>
 
 ### Explain Global 
+
 
 **explain_global(df , model, target_col_name, training=True, test_size = 0.33)**
 
