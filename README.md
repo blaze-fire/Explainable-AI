@@ -6,8 +6,8 @@ Link of ppt for explaination [here](https://docs.google.com/presentation/d/1iiii
 
 The intuition behind the architecture and working is that to provide a general framework that explains a model behaviour (right now support only linear classifier models (LogisticRegression, SGDClassifier, LinearSVC), models which return coefficients after training.
 
-The Logic is that, when you train a classifier model on a dataset you don’t know its behaviour of predictions, that why the model outputs a particular value.
-So  we provide functions(explain_local, explain_global) to explain the predictions of a model .  
+Now, when you train a classifier model on a dataset you don’t know its behaviour of predictions, that why the model outputs a particular value.
+So  we provide functions(**explain_local**, **explain_global**) to explain the predictions of a model .  
 
 # Architecture and working 
 
@@ -94,12 +94,12 @@ Function to evaluate global results
 
 `def explain_local(df , model, target_col_name, num_cols=None, embedings=None)`
 
-Function to evaluate local results
+* Function to evaluate local results
 
-Pass the dataframe,  model, name of target columns, and specify num_cols, embedings.
+* Pass the dataframe,  model, name of target columns, and specify num_cols, embedings.
 
-Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like 
+* Specify names of numerical columns in the form of lists, also specify the embeddings as dictionary like 
 **{'feature_names' : feat_names, 'embeddings_values' : values}**
 
- Where feat_names are feature_names from Countvectorizer and values are the embedded values
+* Where feat_names are feature_names from Countvectorizer and values are the embedded values
 
