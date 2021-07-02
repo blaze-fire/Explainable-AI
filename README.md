@@ -11,6 +11,7 @@ So  we provide functions(explain_local, explain_global) to explain the predictio
 
 # Architecture and working 
 
+![](flowchart.png)
 
 
 
